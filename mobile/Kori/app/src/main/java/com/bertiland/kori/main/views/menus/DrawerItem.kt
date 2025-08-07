@@ -1,4 +1,4 @@
-package com.bertiland.kori.main.views
+package com.bertiland.kori.main.views.menus
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.padding

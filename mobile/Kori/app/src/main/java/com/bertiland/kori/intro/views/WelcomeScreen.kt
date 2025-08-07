@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.bertiland.kori.intro.controllers.IntroViewModel
+import com.bertiland.kori.main.controllers.MainViewModel
 
 @Composable
 fun WelcomeScreen(navController: NavController, viewModel: IntroViewModel) {

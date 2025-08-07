@@ -1,5 +1,6 @@
 package com.bertiland.kori.intro.controllers
 
+import androidx.compose.runtime.Composable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.delay
@@ -8,8 +9,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import androidx.navigation.NavController
 import com.bertiland.kori.intro.models.IntroState
+import com.bertiland.kori.main.controllers.MainViewModel
 
-class IntroViewModel : ViewModel() {
+class IntroViewModel(val mainViewModel: MainViewModel?=null) : ViewModel() {
 
     private val _uiState = MutableStateFlow(IntroState())
     val uiState: StateFlow<IntroState> = _uiState
@@ -25,10 +27,12 @@ class IntroViewModel : ViewModel() {
     }
 
     fun onLoginClick(navController: NavController) {
-        navController.navigate("login")
+        //navController.navigate("login")
+        mainViewModel?.onReady()
     }
 
     fun onSignupClick(navController: NavController) {
-        navController.navigate("signup")
+        //navController.navigate("signup")
+        mainViewModel?.onReady()
     }
 }
