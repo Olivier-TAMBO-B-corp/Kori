@@ -1,0 +1,205 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.ttt.api",
+    "module": "TModeler-android",
+    "version": "1.0.5",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.9"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "TModeler-android-1.0.5.aar",
+          "url": "TModeler-android-1.0.5.aar",
+          "size": 263266,
+          "sha512": "9114091addd8bebfc40fdb886fe499ca0c3ad37fa21b9a6565645130db125a328ec8365d6a69bf4b987d514bb34ba607a5c9c358fb75067a050a557911380a2e",
+          "sha256": "ac3f23b291ec8ba9a264edaed68b89b38fe8b7bb16707beaa9bf375ec47ccac7",
+          "sha1": "212da048d61ff3092bda521602339436a7ebe389",
+          "md5": "1aafb6d3d9c4d72edafef6b04df51839"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "1.9.23"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-stdlib-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-annotations-common"
+            }
+          ]
+        },
+        {
+          "group": "androidx.sqlite",
+          "module": "sqlite",
+          "version": {
+            "requires": "2.3.1"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-stdlib-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-annotations-common"
+            }
+          ]
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.23"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-stdlib-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-annotations-common"
+            }
+          ]
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.6.3"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-stdlib-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-annotations-common"
+            }
+          ]
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-datetime",
+          "version": {
+            "requires": "0.5.0"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-stdlib-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-annotations-common"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "TModeler-android-1.0.5.aar",
+          "url": "TModeler-android-1.0.5.aar",
+          "size": 263266,
+          "sha512": "9114091addd8bebfc40fdb886fe499ca0c3ad37fa21b9a6565645130db125a328ec8365d6a69bf4b987d514bb34ba607a5c9c358fb75067a050a557911380a2e",
+          "sha256": "ac3f23b291ec8ba9a264edaed68b89b38fe8b7bb16707beaa9bf375ec47ccac7",
+          "sha1": "212da048d61ff3092bda521602339436a7ebe389",
+          "md5": "1aafb6d3d9c4d72edafef6b04df51839"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "TModeler-android-1.0.5-sources.jar",
+          "url": "TModeler-android-1.0.5-sources.jar",
+          "size": 9155,
+          "sha512": "949e68ba3756e044ba93e5dd07e7a6a4015c5b23772c0a9c85fc114fd49e9512bfbe86fbd4d10796a367f93dd8ed874e9582b0e3c8c961039dd312a4d73d40e8",
+          "sha256": "1aa76e6ab2c4563d986e1df658e5fda293646fa7d615a622ffc0f2bd952e5001",
+          "sha1": "112991a3f3c6ff39c1f7a38db3c2b2a097f3b137",
+          "md5": "2d572021354c0fd6320114ee85ea91aa"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseJavaDocPublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "TModeler-android-1.0.5-javadoc.jar",
+          "url": "TModeler-android-1.0.5-javadoc.jar",
+          "size": 363502,
+          "sha512": "6a23fa3a4fc0daf090912dc20f5c0257200adb6f0823459215cdb2485fccc4e98b0d15f26a6ac6455ee586157b7b31c82a46b5ba279dfd8d34dce901bedc4688",
+          "sha256": "050fcd584a33be004307cded4321f460f4840b2179f2a822852440d709f7f6b8",
+          "sha1": "5e45acc51b3bedb222bdb0779c36589e6fa6cd02",
+          "md5": "dfc169af3f6eebe611793c02159e2e3b"
+        }
+      ]
+    }
+  ]
+}
