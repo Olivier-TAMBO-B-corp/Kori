@@ -1,4 +1,4 @@
-package com.bertiland.kori.dictionary.controllers
+package com.bertiland.kori.users.controllers
 
 class UserViewModel {
 }

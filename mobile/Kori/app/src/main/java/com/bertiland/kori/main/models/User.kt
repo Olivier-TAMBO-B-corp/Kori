@@ -1,3 +1,3 @@
 package com.bertiland.kori.main.models
 
-data class User(val name: String, val email: String)
+typealias User = com.bertiland.kori.users.models.User

@@ -4,7 +4,7 @@ import android.app.Application
 import api.ttt.orm.db.Tcontext
 import api.ttt.orm.db.Tdb
 import api.ttt.orm.modeler.TModeler
-import com.bertiland.kori._models.Client
+import com.bertiland.kori.users.models.User
 
 class App : Application() {
     override fun onCreate() {
@@ -24,7 +24,7 @@ class App : Application() {
                     .context(context)
                     .dbDir("/tmp/sql")
                     .dbName("test.db")
-                    .accept(Client().clazz().getPackage())
+                    .accept(User().clazz().getPackage())
                     .get()!!
             )
     }

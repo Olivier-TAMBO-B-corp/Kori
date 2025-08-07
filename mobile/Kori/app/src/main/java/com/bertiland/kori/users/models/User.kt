@@ -1,4 +1,6 @@
-package com.bertiland.kori.dictionary.models
+package com.bertiland.kori.users.models
 
-class User {
+import api.ttt.orm.model.TModel
+
+class User : TModel<User>() {
 }

@@ -18,7 +18,7 @@ fun DrawerContent(
 ) {
     Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
         // User info
-        Text("Hello, ${user.name}", style = MaterialTheme.typography.titleLarge)
+        Text("Hello, User Name", style = MaterialTheme.typography.titleLarge)
         Spacer(Modifier.height(24.dp))
 
         // Project sections

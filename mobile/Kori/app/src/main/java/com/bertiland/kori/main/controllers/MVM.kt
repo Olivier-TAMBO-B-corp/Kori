@@ -5,7 +5,7 @@ import com.bertiland.kori.main.models.ProjectSection
 import com.bertiland.kori.main.models.User
 
 class MVM : ViewModel() {
-    val user = User("Olivier", "olivierdhon@gmail.com")
+    val user = User()
     val sections = listOf(
         ProjectSection("Introduction"),
         ProjectSection("Objectifs"),
