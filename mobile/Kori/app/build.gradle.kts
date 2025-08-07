@@ -132,7 +132,7 @@ dependencies {
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
 
     // TModeler
-    //implementation("com.ttt.api:TModeler:1.0.1")
+    implementation("com.ttt.api:TModeler-android:1.0.5")
 }
 
 configurations.all {
