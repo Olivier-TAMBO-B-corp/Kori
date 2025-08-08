@@ -1,6 +1,6 @@
 package com.bertiland.kori.intro.controllers
 
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.delay
@@ -8,18 +8,40 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import androidx.navigation.NavController
-import com.bertiland.kori.intro.models.IntroState
-import com.bertiland.kori.main.controllers.MainViewModel
+import api.ttt.orm.ms.ext.all
+import api.ttt.orm.ms.ext.isNotEmpty
+import com.bertiland.kori.common.models.IntroState
 
-class IntroViewModel(val mainViewModel: MainViewModel?=null) : ViewModel() {
+class IntroViewModel() : ViewModel() {
+    private var introState: IntroState = IntroState()
 
-    private val _uiState = MutableStateFlow(IntroState())
+    init {
+        if(IntroState.tms.isNotEmpty()){
+            introState = IntroState.tms.all().first()
+        }
+
+        introState.isLoading_ = true
+        introState.onSignup_ = false
+        introState.onLogin_ = false
+        introState.save()
+    }
+
+    var isIntroLoading =  mutableStateOf(introState.isLoading_)
+
+    private val _uiState = MutableStateFlow(introState)
     val uiState: StateFlow<IntroState> = _uiState
 
     fun onStart(navController: NavController) {
+        /** run system init process
+        */
+
         viewModelScope.launch {
             delay(2000)
-            _uiState.value = _uiState.value.copy(isLoading = false)
+
+            introState.isLoading_ = false
+            isIntroLoading.value = introState.isLoading_
+            introState.save()
+
             navController.navigate("welcome") {
                 popUpTo("splash") { inclusive = true }
             }
@@ -28,11 +50,13 @@ class IntroViewModel(val mainViewModel: MainViewModel?=null) : ViewModel() {
 
     fun onLoginClick(navController: NavController) {
         //navController.navigate("login")
-        mainViewModel?.onReady()
+        introState.onLogin_ = true
+        introState.save()
     }
 
     fun onSignupClick(navController: NavController) {
         //navController.navigate("signup")
-        mainViewModel?.onReady()
+        introState.onSignup_ = true
+        introState.save()
     }
 }

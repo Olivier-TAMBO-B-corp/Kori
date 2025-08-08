@@ -1,13 +1,24 @@
 package com.bertiland.kori.main.controllers
 
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.colorResource
-import com.bertiland.kori.R
+import api.ttt.orm.ms.ext.all
+import api.ttt.orm.ms.ext.isNotEmpty
+import api.ttt.orm.ms.ext.onModelChange
 import com.bertiland.kori.common.viewmodels.TViewModel
+import com.bertiland.kori.common.models.IntroState
 
 class MainViewModel : TViewModel() {
+    init {
+        initObservables()
+    }
+
+    private fun initObservables() {
+        IntroState.tms.onModelChange { keys ->
+            //
+        }
+    }
+
     fun onBackPressed(){}
 
     var colorPrimaryDark: Color = Color(0)

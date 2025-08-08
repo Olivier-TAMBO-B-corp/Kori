@@ -13,6 +13,11 @@ import androidx.navigation.NavController
 import com.bertiland.kori.intro.controllers.IntroViewModel
 
 @Composable
+fun SplashScreen(navController: NavController) {
+    SplashScreen(navController = navController, viewModel = IntroViewModel())
+}
+
+@Composable
 fun SplashScreen(navController: NavController, viewModel: IntroViewModel) {
     val state by viewModel.uiState.collectAsState()
 
@@ -24,7 +29,7 @@ fun SplashScreen(navController: NavController, viewModel: IntroViewModel) {
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        if (state.isLoading) {
+        if (viewModel.isIntroLoading.value) {
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Text(
                     text = "Kori",

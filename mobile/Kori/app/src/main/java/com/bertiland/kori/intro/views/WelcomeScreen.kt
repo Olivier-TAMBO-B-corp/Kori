@@ -11,6 +11,11 @@ import com.bertiland.kori.intro.controllers.IntroViewModel
 import com.bertiland.kori.main.controllers.MainViewModel
 
 @Composable
+fun WelcomeScreen(navController: NavController) {
+    WelcomeScreen(navController = navController, viewModel = IntroViewModel())
+}
+
+@Composable
 fun WelcomeScreen(navController: NavController, viewModel: IntroViewModel) {
     Column(
         modifier = Modifier

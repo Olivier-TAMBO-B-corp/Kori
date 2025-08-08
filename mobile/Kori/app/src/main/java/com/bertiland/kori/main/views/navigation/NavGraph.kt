@@ -38,8 +38,8 @@ fun NavGraph(
 
         composable("users/signup") {  }
 
-        composable("splash") { SplashScreen(navController, viewModel = IntroViewModel(mainViewModel = viewModel)) }
+        composable("splash") { SplashScreen(navController) }
 
-        composable("welcome") { WelcomeScreen(navController, viewModel = IntroViewModel(mainViewModel = viewModel)) }
+        composable("welcome") { WelcomeScreen(navController) }
     }
 }
