@@ -4,6 +4,7 @@ import android.app.Application
 import api.ttt.orm.db.Tcontext
 import api.ttt.orm.db.Tdb
 import api.ttt.orm.modeler.TModeler
+import api.ttt.orm.ms.ext.prepare
 import com.bertiland.kori.common.models.IntroState
 
 class App : Application() {
@@ -27,5 +28,7 @@ class App : Application() {
                     .accept(IntroState().clazz().getPackage())
                     .get()!!
             )
+
+        IntroState.tms.prepare()
     }
 }

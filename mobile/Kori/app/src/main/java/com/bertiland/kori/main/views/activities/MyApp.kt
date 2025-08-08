@@ -41,6 +41,8 @@ fun MyApp(viewModel: MainViewModel) {
     val scope = rememberCoroutineScope()
     var isSearchVisible by remember { mutableStateOf(false) }
 
+    viewModel.navController(navController)
+
     viewModel.colorPrimary = colorResource(id = R.color.primary)
     viewModel.colorPrimaryDark = colorResource(id = R.color.primary_dark)
 

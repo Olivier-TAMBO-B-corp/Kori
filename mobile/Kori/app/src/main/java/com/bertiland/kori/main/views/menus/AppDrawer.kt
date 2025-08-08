@@ -12,7 +12,10 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.ScaffoldState
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Abc
 import androidx.compose.material.icons.filled.EventNote
+import androidx.compose.material.icons.filled.Games
+import androidx.compose.material.icons.filled.GpsFixed
 import androidx.compose.material.icons.filled.GridView
 import androidx.compose.material.icons.filled.Group
 import androidx.compose.material.icons.filled.History
@@ -60,39 +63,28 @@ fun AppDrawer(
         item { Spacer(modifier = Modifier.height(16.dp)) }
 
         item {
-            NavigationItem(icon = Icons.Default.Home, label = "Accueil") {
+            NavigationItem(icon = Icons.Default.Home, label = "Home") { // feed, posts, games parties
                 defaultScreen(navController, viewModel, scope, scaffoldState)
             }
         }
         item {
-            NavigationItem(icon = Icons.Default.Home, label = "Filtres") {
+            NavigationItem(icon = Icons.Default.History, label = "My Space") { // user content
                 defaultScreen(navController, viewModel, scope, scaffoldState)
             }
         }
         item {
-            NavigationItem(icon = Icons.Default.Home, label = "Calques") {
+            NavigationItem(icon = Icons.Default.GpsFixed, label = "Map") { // User Network
                 defaultScreen(navController, viewModel, scope, scaffoldState)
             }
         }
         item {
-            NavigationItem(icon = Icons.Default.List, label = "Objets") {
+            NavigationItem(icon = Icons.Default.Games, label = "Games") { // Games Models
                 defaultScreen(navController, viewModel, scope, scaffoldState)
             }
         }
         item {
-            NavigationItem(icon = Icons.Default.GridView, label = "Modèles") {
+            NavigationItem(icon = Icons.Default.Abc, label = "Dico") { // Dictionary
                 defaultScreen(navController, viewModel, scope, scaffoldState)
-            }
-        }
-        item {
-            NavigationItem(icon = Icons.Default.History, label = "Historiques") {
-                defaultScreen(navController, viewModel, scope, scaffoldState)
-            }
-        }
-        item {
-            NavigationItem(icon = Icons.Default.Group, label = "Groupes") {
-                navController.navigate("users")
-                scope.launch { scaffoldState.drawerState.close() }
             }
         }
 
@@ -107,11 +99,6 @@ fun AppDrawer(
         }
         item {
             Divider(color = Color.Gray, thickness = 1.dp)
-        }
-        item {
-            NavigationItem(icon = Icons.Default.Person, label = "Profil") {
-                defaultScreen(navController, viewModel, scope, scaffoldState)
-            }
         }
         item {
             NavigationItem(icon = Icons.Default.EventNote, label = "Pay") {
@@ -129,7 +116,7 @@ fun AppDrawer(
             }
         }
         item {
-            NavigationItem(icon = Icons.Default.EventNote, label = "Kori") {
+            NavigationItem(icon = Icons.Default.EventNote, label = "IM") {
                 defaultScreen(navController, viewModel, scope, scaffoldState)
             }
         }
@@ -157,7 +144,7 @@ fun AppDrawer(
         item { Spacer(modifier = Modifier.height(24.dp)) }
 
         item {
-            NavigationItem(icon = Icons.Default.Settings, label = "Paramètres") {
+            NavigationItem(icon = Icons.Default.Settings, label = "Paramètres") { // user settings
                 defaultScreen(navController, viewModel, scope, scaffoldState)
             }
         }

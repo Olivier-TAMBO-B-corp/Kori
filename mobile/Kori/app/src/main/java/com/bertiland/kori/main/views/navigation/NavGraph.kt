@@ -12,6 +12,7 @@ import com.bertiland.kori.intro.controllers.IntroViewModel
 import com.bertiland.kori.intro.views.SplashScreen
 import com.bertiland.kori.intro.views.WelcomeScreen
 import com.bertiland.kori.main.controllers.MainViewModel
+import com.bertiland.kori.posts.views.HomeScreen
 
 @Composable
 fun NavGraph(
@@ -41,5 +42,7 @@ fun NavGraph(
         composable("splash") { SplashScreen(navController) }
 
         composable("welcome") { WelcomeScreen(navController) }
+
+        composable("home") { HomeScreen(navController) }
     }
 }

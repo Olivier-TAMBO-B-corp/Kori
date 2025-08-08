@@ -2,6 +2,7 @@ package com.bertiland.kori.main.controllers
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.graphics.Color
+import androidx.navigation.NavHostController
 import api.ttt.orm.ms.ext.all
 import api.ttt.orm.ms.ext.isNotEmpty
 import api.ttt.orm.ms.ext.onModelChange
@@ -15,7 +16,11 @@ class MainViewModel : TViewModel() {
 
     private fun initObservables() {
         IntroState.tms.onModelChange { keys ->
-            //
+            if(IntroState.tms.isNotEmpty()){
+                val introState = IntroState.tms.all().first()
+                if(introState.onLogin_ || introState.onSignup_)
+                    onReady()
+            }
         }
     }
 
@@ -36,5 +41,15 @@ class MainViewModel : TViewModel() {
         statusBarColor.value = colorPrimary
         navigationBarColor.value = colorPrimary
         isTopBarVisible.value = true
+
+
+        navController?.navigate("home") {
+            popUpTo("welcome") { inclusive = true }
+        }
+    }
+
+    var navController: NavHostController?=null
+    fun navController(navController: NavHostController) {
+        this.navController  = navController
     }
 }
